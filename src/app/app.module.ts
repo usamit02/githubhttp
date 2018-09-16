@@ -8,7 +8,7 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { GithubUsersServiceProvider } from '../providers/github-users-service/github-users-service';
+import { GithubUsersService } from '../providers/github-users-service/github-users-service';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { GithubUsersServiceProvider } from '../providers/github-users-service/gi
     ListPage
   ],
   providers: [
-    GithubUsersServiceProvider,
+    GithubUsersService,
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler }

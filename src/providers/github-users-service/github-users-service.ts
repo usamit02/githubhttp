@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
@@ -10,13 +10,13 @@ import { User } from './User';
   and Angular DI.
 */
 @Injectable()
-export class GithubUsersServiceProvider {
+export class GithubUsersService {
 
-  constructor(public http: HttpClient) {
+  constructor(public http: Http) {
     console.log('Hello GithubUsersServiceProvider Provider');
   }
   getUsers(): Observable<User[]> {
-    return this.http.get('https://api.github.com/users').map(res => <Array<User>>res);
+    return this.http.get('https://api.github.com/users').map(res => <Array<User>>res.json());
   }
 
 }
